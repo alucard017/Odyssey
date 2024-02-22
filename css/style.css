@@ -1,0 +1,118 @@
+/* COLORS: 
+Light orange: #d08246
+Medium orange: #c06723
+Dark orange: #EE7214 */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+   font-family: 'Lato',sans-serif;
+   font-weight: 16px;
+   font-size: 400;
+   line-height: 1.7;
+   padding: 30px;
+}
+.header
+{
+  height: 95vh;
+  width: 100%;
+  background-image: linear-gradient(to right bottom,rgba(208, 130, 70, 0.8) ,rgba(238, 114, 20, 0.8) ),url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+  position: relative;
+}
+
+.logo-box
+{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.logo
+{
+    height: 35px;
+}
+.text-box
+{
+    position: absolute;
+    top: 40%;
+    left: 51.3%;
+    transform: translate(-50%, -50%);
+    /* background-color: red; */
+}
+.heading-primary
+{
+  color: beige;
+  text-transform: uppercase;
+  backface-visibility: hidden; /*The backface after the transform will be hidden from USER*/
+}
+.heading-primary-main
+{
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInFromLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /* animation-delay: 1s; // animation delay in seconds 
+     animation-iteration-count :3; //How many times animation should repeat? Infinite means it will keep repeating until stopped manually.
+  
+  */
+}
+.heading-primary-second
+{
+ display: block;
+ font-size: 20px;
+ font-weight: 700;
+ letter-spacing: 11.5px;
+ animation: moveInFromRight 1s ease-out; /*shorthand property */
+ /* animation-name: moveInFromRight;
+ animation-duration: 1s;
+ animation-timing-function: ease-out; */
+}
+
+@keyframes moveInFromLeft 
+{
+   0%
+   {
+    opacity: 0;
+    transform: translateX(-100px);
+   }    
+   80%
+   {
+    transform: translateX(5px);
+   }
+   100%
+   {
+    opacity: 1;
+    transform: translateX(0);
+   }
+}
+@keyframes moveInFromRight
+{
+   0%
+   {
+    opacity: 0;
+    transform: translateX(100px);
+   }    
+   80%
+   {
+    transform: translateX(-5px);
+   }
+   100%
+   {
+    opacity: 1;
+    transform: translateX(0);
+   }
+}
+
+
+
