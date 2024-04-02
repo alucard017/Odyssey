@@ -119,7 +119,7 @@ body
 @keyframes moveFromBottom{
   0%
   {
-    transform: translateY(50px);
+    transform: translateY(-50px);
     opacity: 0;
   }
   100%
@@ -135,7 +135,7 @@ body
   display: inline-block;
   border-radius: 100px;
   transition: all .2s;
-  position: relative;
+  position: relative; /*  for the ::after pseudoelelement */
 }
 .btn:hover{
   transform: translateY(-3px);
@@ -176,5 +176,5 @@ body
 .btn-animated
 {
   animation: moveFromBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
+  animation-fill-mode: backwards; /* applies the animation before actual animation starts before 0% */
 }
