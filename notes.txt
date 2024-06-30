@@ -1,0 +1,67 @@
+/////////////////-----------------3 pillars to write good HTML and CSS----------------////////////////////
+
+1. Responsive Design
+   - Fluid Layouts
+   - Media Queries
+   - Responsive Images
+   - Correct Units
+   - Deskop first v/s Mobile-first
+2. Maintainable and Scalable Code
+   - Clean
+   - Easy to Understand
+   - Growth
+   - Reusable
+   - How to organise files ?
+   - How to name classes ?
+   - How to structure HTML ?
+3. Web Performance
+   - less HTTP Requests
+   - Less Code
+   - Compress Code
+   - Use a CSS preprocessor
+   - Less Images
+   - Compress Images
+
+/////////////////-----------------3 pillars to write good HTML and CSS----------------////////////////////
+
+
+/////////////////---------CSS Behind the Scenes----------///////////////////
+
+Source Code -> Load HTML -> ParseHTML -> DOM--------------------------------------
+                            |                                                    |====> Render -> Website 
+                            V                                                    |====>  Tree  -> Rendering
+                            Load CSS -> ParseCSS -> CSSOM(CSS Object Model)-------                    |
+                                         |                                                            V  
+                                         V                                                    [Final Rendered Website]
+                                         1. Resolve Conflicting CSS Declarations(Cascade)             
+                                         2. Process Final Values.
+
+/////////////////---------CSS Behind the Scenes----------///////////////////
+
+
+//////////////////----------CSS Parsing----------------/////////////////
+
+1. Cascade -> Process of combining different CSS Declarations and resolving the conflicts between them so as to finalise the cascaded style at the end.
+           -> Basically The Specificity decides what style is to be applied at the end.
+           -> CSS Declarations can be either 1. Author Declarations, 2. User Declarations, 3. Browser Declarations
+
+
+        IMPORTANCE             >       SPECIFICITY                           >           SOURCE ORDER
+    1. User !important               1. Inline Styles                             The last Declarations in the code
+    2. Author !important             2. IDs                                       Overrides all other Declarations and will be applied
+    3. User Declarations             3. Classes, pseudo-classes, attributes
+    4. Author Declarations           4. Elements, pseudo-elements
+    5. Default browser Declarations
+    
+NOTES:
+1. CSS Declarations marked with !important have the highest priority
+2. But only use !important as a last Resource. It is better to use Specificity->more Maintainable code.
+3. inline styles will always have priority over styles in external stylesheets.
+4. A selector will always have priority over styles in external stylesheets.
+5. A selector that contains 1 ID is more specific than 1000 classes.
+6. A selector that contains 1 class is more specific than 1000 elements.
+7. The universal selector has no specificity value (0,0,0,0).
+8. Rely more on specificity than the order of selectors.
+9. But rely on order when using 3rd party stylesheets -  always put own stylesheet at the end.
+
+//////////////////----------CSS Parsing----------------/////////////////
