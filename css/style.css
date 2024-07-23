@@ -3,56 +3,43 @@ Light orange: #d08246
 Medium orange: #c06723
 Dark orange: #EE7214
 */
-
-
 /* Browser me pehle hi kuch kuda rehta hai. Usko hatao. */
 /* Border box tells that the box model doesn't add borders and paddings to the total height and total weight. */
-*
-{
-    margin: 0;
-    padding: 0; 
-    box-sizing: border-box;
-}
-body
-{
-   font-family: 'Lato',sans-serif;
-   font-weight: 16px;
-   font-size: 400;
-   line-height: 1.7;
-   padding: 30px;
-}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 16px;
+  font-size: 400;
+  line-height: 1.7;
+  padding: 30px; }
 
 /* Background-image: cover enlarges and attaches the image as cover to the container. */
 /* Background-size : top makes sure that the top of the image stays intact while we crop. */
-
-.header
-{
+.header {
   height: 95vh;
   width: 100%;
   /* Two images one top of the other */
   /* Linear gradient generates beautiful gradient view. */
-  background-image: linear-gradient(to right bottom,rgba(208, 130, 70, 0.8) ,rgba(238, 114, 20, 0.8) ),url(../img/hero.jpg);
+  /* background-image: linear-gradient(to right bottom,rgba(208, 130, 70, 0.8) ,rgba(238, 114, 20, 0.8) ),url(../img/hero.jpg); */
+  background-image: linear-gradient(to right bottom, #d4145ad5, #fbb13be2), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   /* Cuts the whole container as a shape, polygon, triangle, square, accepts the coordinates of viewport. */
-  clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* Used for absolute uses of its child. */
-  position: relative;
-}
-
-.logo-box
-{
+  position: relative; }
+  .header__logo-box {
     /* Finds the parent element which position is RELATIVE else chooses HTML Body. */
     position: absolute;
     top: 40px;
-    left: 40px;
-}
-.logo
-{
-    height: 35px;
-}
-.text-box
-{
+    left: 40px; }
+  .header__logo {
+    height: 35px; }
+  .header__text-box {
     position: absolute;
     /* This is about the parent whose position is relative. */
     top: 40%;
@@ -60,148 +47,114 @@ body
     /* This transform is with respect to the element itself. */
     transform: translate(-50%, -50%);
     text-align: center;
-    /* background-color: red; */
-}
-.heading-primary
-{
-  color: beige;
+    /* background-color: red; */ }
+
+.heading-primary {
+  color: whitesmoke;
   text-transform: uppercase;
   /* Sometimes animation makes some elements shaky, reason is still unknown. */
-  backface-visibility: hidden; /*The backface of the Element after the transform will be hidden from USER*/
-  margin-bottom: 40px;
-}
-.heading-primary-main
-{
-  display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 35px;
-
-  /* name of animation specified in KEYFRAMES. */
-  animation-name: moveInFromLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-
-  /* animation-delay: 1s; // animation delay in seconds before starting animation 
-     animation-iteration-count :3; //How many times animation should repeat? Infinite means it will keep repeating until stopped manually.
-  
-  */
-}
-.heading-primary-second
-{
- display: block;
- font-size: 20px;
- font-weight: 700;
- letter-spacing: 11.5px;
- animation: moveInFromRight 1s ease-out; /*shorthand property */
- /* animation-name: moveInFromRight;
- animation-duration: 1s;
- animation-timing-function: ease-out; */
-}
+  backface-visibility: hidden;
+  /*The backface of the Element after the transform will be hidden from USER*/
+  margin-bottom: 40px; }
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    /* name of animation specified in KEYFRAMES. */
+    animation-name: moveInFromLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 1s; // animation delay in seconds before starting animation 
+       animation-iteration-count :3; //How many times animation should repeat? Infinite means it will keep repeating until stopped manually.
+    
+    */ }
+  .heading-primary-second {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 11.5px;
+    animation: moveInFromRight 1s ease-out;
+    /*shorthand property */
+    /* animation-name: moveInFromRight;
+   animation-duration: 1s;
+   animation-timing-function: ease-out; */ }
 
 /* Note that Browsers are optimised for two properties in Animation i.e Opacity and Transform */
-@keyframes moveInFromLeft 
-{
-   0%
-   {
+@keyframes moveInFromLeft {
+  0% {
     opacity: 0;
-    transform: translateX(-100px);
-   }    
-   80%
-   {
-    transform: translateX(5px);
-   }
-   100%
-   {
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(5px); }
+  100% {
     opacity: 1;
     /* Original Look of the the current view. */
-    transform: translateX(0);
-   }
-}
-@keyframes moveInFromRight
-{
-   0%
-   {
-    opacity: 0;
-    transform: translateX(100px);
-   }    
-   80%
-   {
-    transform: translateX(-5px);
-   }
-   100%
-   {
-    opacity: 1;
-    transform: translateX(0);
-   }
+    transform: translateX(0); } }
 
-}
-@keyframes moveFromBottom{
-  0%
-  {
-    transform: translateY(-50px);
+@keyframes moveInFromRight {
+  0% {
     opacity: 0;
-  }
-  100%
-  {
-    transform: translateY(0);
+    transform: translateX(100px); }
+  80% {
+    transform: translateX(-5px); }
+  100% {
     opacity: 1;
-  }
-}
+    transform: translateX(0); } }
+
+@keyframes moveFromBottom {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
 
 /* Pseudo classes indicate special state of an element and select them for manipulating styles. */
-.btn:link,.btn:visited{
+.btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
-  padding:15px 30px;
+  padding: 15px 30px;
   display: inline-block;
   border-radius: 100px;
-
   /* Transition needs to be placed inside the initial state always. */
-  transition: all .2s;
-  position: relative; /*  for the ::after pseudoelelement */
-}
-.btn:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-.btn:active
-{
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-.btn-white
-{
-  background-color: whitesmoke;
-  color: maroon;
-}
+  transition: all 0.2s;
+  position: relative;
+  /*  for the ::after pseudoelelement */ }
 
-/* A very unique property which adds a virtual element right after the original element and can specify styling.   */
-.btn::after{
+.btn::after {
   /* Necessary for after pseudo-element */
   content: "";
   /* It's also necessary. */
   display: inline-block;
-   height: 100%;
-   width: 100%;
-   border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s; /*Whereever the transform property is written in the following states.*/
-}
-.btn-white::after{
-  background-color: white;
-}
-.btn:hover::after
-{
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  /*Whereever the transform property is written in the following states.*/ }
 
-.btn-animated
-{
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.btn-white {
+  background-color: whitesmoke;
+  color: maroon; }
+  .btn-white::after {
+    background-color: whitesmoke; }
+
+.btn-animated {
   animation: moveFromBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; /* applies the animation before actual animation starts before 0% */
-}
+  animation-fill-mode: backwards;
+  /* applies the animation before actual animation starts before 0% */ }
