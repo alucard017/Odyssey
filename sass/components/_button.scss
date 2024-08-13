@@ -1,0 +1,52 @@
+/* Pseudo classes indicate special state of an element and select them for manipulating styles. */
+.btn {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 100px;
+
+    /* Transition needs to be placed inside the initial state always. */
+    transition: all 0.2s;
+    position: relative; /*  for the ::after pseudoelelement */
+  }
+  &::after {
+    /* Necessary for after pseudo-element */
+    content: "";
+    /* It's also necessary. */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; /*Whereever the transform property is written in the following states.*/
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color-black, 0.2);
+  }
+  &-white {
+    background-color: $color-bg-white;
+    color: $color-text;
+    &::after {
+      background-color: $color-bg-white;
+    }
+  }
+  &-animated {
+    animation: moveFromBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards; /* applies the animation before actual animation starts before 0% */
+  }
+}

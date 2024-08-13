@@ -5,82 +5,6 @@ Dark orange: #EE7214
 */
 /* Browser me pehle hi kuch kuda rehta hai. Usko hatao. */
 /* Border box tells that the box model doesn't add borders and paddings to the total height and total weight. */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 16px;
-  font-size: 400;
-  line-height: 1.7;
-  padding: 30px; }
-
-/* Background-image: cover enlarges and attaches the image as cover to the container. */
-/* Background-size : top makes sure that the top of the image stays intact while we crop. */
-.header {
-  height: 95vh;
-  width: 100%;
-  /* Two images one top of the other */
-  /* Linear gradient generates beautiful gradient view. */
-  /* background-image: linear-gradient(to right bottom,rgba(208, 130, 70, 0.8) ,rgba(238, 114, 20, 0.8) ),url(../img/hero.jpg); */
-  background-image: linear-gradient(to right bottom, #d4145ad5, #fbb13be2), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /* Cuts the whole container as a shape, polygon, triangle, square, accepts the coordinates of viewport. */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* Used for absolute uses of its child. */
-  position: relative; }
-  .header__logo-box {
-    /* Finds the parent element which position is RELATIVE else chooses HTML Body. */
-    position: absolute;
-    top: 40px;
-    left: 40px; }
-  .header__logo {
-    height: 35px; }
-  .header__text-box {
-    position: absolute;
-    /* This is about the parent whose position is relative. */
-    top: 40%;
-    left: 51.3%;
-    /* This transform is with respect to the element itself. */
-    transform: translate(-50%, -50%);
-    text-align: center;
-    /* background-color: red; */ }
-
-.heading-primary {
-  color: whitesmoke;
-  text-transform: uppercase;
-  /* Sometimes animation makes some elements shaky, reason is still unknown. */
-  backface-visibility: hidden;
-  /*The backface of the Element after the transform will be hidden from USER*/
-  margin-bottom: 40px; }
-  .heading-primary-main {
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 35px;
-    /* name of animation specified in KEYFRAMES. */
-    animation-name: moveInFromLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* animation-delay: 1s; // animation delay in seconds before starting animation 
-       animation-iteration-count :3; //How many times animation should repeat? Infinite means it will keep repeating until stopped manually.
-    
-    */ }
-  .heading-primary-second {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 11.5px;
-    animation: moveInFromRight 1s ease-out;
-    /*shorthand property */
-    /* animation-name: moveInFromRight;
-   animation-duration: 1s;
-   animation-timing-function: ease-out; */ }
-
-/* Note that Browsers are optimised for two properties in Animation i.e Opacity and Transform */
 @keyframes moveInFromLeft {
   0% {
     opacity: 0;
@@ -109,6 +33,49 @@ body {
   100% {
     transform: translateY(0);
     opacity: 1; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 16px;
+  font-size: 400;
+  line-height: 1.7;
+  padding: 30px; }
+
+.heading-primary {
+  color: whitesmoke;
+  text-transform: uppercase;
+  /* Sometimes animation makes some elements shaky, reason is still unknown. */
+  backface-visibility: hidden;
+  /*The backface of the Element after the transform will be hidden from USER*/
+  margin-bottom: 40px; }
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    /* name of animation specified in KEYFRAMES. */
+    animation-name: moveInFromLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 1s; // animation delay in seconds before starting animation 
+         animation-iteration-count :3; //How many times animation should repeat? Infinite means it will keep repeating until stopped manually.
+      
+      */ }
+  .heading-primary-second {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 11.5px;
+    animation: moveInFromRight 1s ease-out;
+    /*shorthand property */
+    /* animation-name: moveInFromRight;
+     animation-duration: 1s;
+     animation-timing-function: ease-out; */ }
 
 /* Pseudo classes indicate special state of an element and select them for manipulating styles. */
 .btn:link, .btn:visited {
@@ -158,3 +125,37 @@ body {
   animation: moveFromBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
   /* applies the animation before actual animation starts before 0% */ }
+
+.header {
+  height: 95vh;
+  width: 100%;
+  /* Two images one top of the other */
+  /* Linear gradient generates beautiful gradient view. */
+  /* background-image: linear-gradient(to right bottom,rgba(208, 130, 70, 0.8) ,rgba(238, 114, 20, 0.8) ),url(../img/hero.jpg); */
+  background-image: linear-gradient(to right bottom, #d4145ad5, #fbb13be2), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /* Cuts the whole container as a shape, polygon, triangle, square, accepts the coordinates of viewport. */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* Used for absolute uses of its child. */
+  position: relative; }
+  .header__logo-box {
+    /* Finds the parent element which position is RELATIVE else chooses HTML Body. */
+    position: absolute;
+    top: 40px;
+    left: 40px; }
+  .header__logo {
+    height: 35px; }
+  .header__text-box {
+    position: absolute;
+    /* This is about the parent whose position is relative. */
+    top: 40%;
+    left: 51.3%;
+    /* This transform is with respect to the element itself. */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* background-color: red; */ }
+
+/* Background-image: cover enlarges and attaches the image as cover to the container. */
+/* Background-size : top makes sure that the top of the image stays intact while we crop. */
+/* Note that Browsers are optimised for two properties in Animation i.e Opacity and Transform */

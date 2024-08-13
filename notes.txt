@@ -65,3 +65,10 @@ NOTES:
 9. But rely on order when using 3rd party stylesheets -  always put own stylesheet at the end.
 
 //////////////////----------CSS Parsing----------------/////////////////
+
+/////////////////-----------CSS Architecture------------////////////////
+ 
+- It follows 7-1 Architecture, means 7 folders with 1 main.scss file.
+- Partial files always start with a underscore.
+
+/////////////////-----------CSS Architecture------------////////////////

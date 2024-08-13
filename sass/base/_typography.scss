@@ -1,0 +1,43 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 16px;
+  font-size: 400;
+  line-height: 1.7;
+  padding: 30px;
+}
+
+.heading-primary {
+  color: $color-bg-white;
+  text-transform: uppercase;
+  /* Sometimes animation makes some elements shaky, reason is still unknown. */
+  backface-visibility: hidden; /*The backface of the Element after the transform will be hidden from USER*/
+  margin-bottom: 40px;
+
+  &-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    /* name of animation specified in KEYFRAMES. */
+    animation-name: moveInFromLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    /* animation-delay: 1s; // animation delay in seconds before starting animation 
+         animation-iteration-count :3; //How many times animation should repeat? Infinite means it will keep repeating until stopped manually.
+      
+      */
+  }
+
+  &-second {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 11.5px;
+    animation: moveInFromRight 1s ease-out; /*shorthand property */
+    /* animation-name: moveInFromRight;
+     animation-duration: 1s;
+     animation-timing-function: ease-out; */
+  }
+}
