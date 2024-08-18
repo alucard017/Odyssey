@@ -4,9 +4,9 @@
   &:visited {
     text-decoration: none;
     text-transform: uppercase;
-    padding: 15px 30px;
+    padding: 1.5rem 2.9rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 6.25rem;
 
     /* Transition needs to be placed inside the initial state always. */
     transition: all 0.2s;
@@ -19,7 +19,7 @@
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 6.25rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,7 +28,7 @@
   }
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba($color-black, 0.2);
+    box-shadow: 0 0.625rem 1.25rem rgba($color-black, 0.2);
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
@@ -36,7 +36,7 @@
   }
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba($color-black, 0.2);
+    box-shadow: 0 0.313rem 0.625rem rgba($color-black, 0.2);
   }
   &-white {
     background-color: $color-bg-white;

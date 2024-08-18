@@ -107,9 +107,9 @@ body {
 .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
-  padding: 15px 30px;
+  padding: 1.5rem 2.9rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 6.25rem;
   /* Transition needs to be placed inside the initial state always. */
   transition: all 0.2s;
   position: relative;
@@ -122,7 +122,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 6.25rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -132,14 +132,14 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2); }
   .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.313rem 0.625rem rgba(0, 0, 0, 0.2); }
 
 .btn-white {
   background-color: whitesmoke;
