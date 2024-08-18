@@ -102,4 +102,10 @@ NOTE - Both SASS and SCSS are used for Sass compilation however SCSS is used for
 
 /////////////------------Extend---------------///////////////
 
+////////////------------Responsive Design Principles
+- Fluid Layouts - Use % and max-width instead of width
+- responsive Units - Use rem instead of px
+- Flexible Images - Use % for image dimensions and max-width
+- Media Queries - The most important component for Responsive sites
+----> Three ways - Floats, Flexbox, Grids.
 

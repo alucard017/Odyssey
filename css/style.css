@@ -34,15 +34,23 @@ Dark orange: #EE7214
     transform: translateY(0);
     opacity: 1; } }
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
 body {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
   font-family: "Lato", sans-serif;
-  font-weight: 16px;
-  font-size: 400;
+  font-weight: 400;
+  font-size: 1rem;
   line-height: 1.7;
   padding: 30px; }
 
@@ -76,6 +84,24 @@ body {
     /* animation-name: moveInFromRight;
      animation-duration: 1s;
      animation-timing-function: ease-out; */ }
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #d4145ad5, #fbb13be2);
+  -webkit-background-clip: text;
+  color: transparent; }
+  .heading-secondary:hover {
+    transform: scale(1.2);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-class {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
 
 /* Pseudo classes indicate special state of an element and select them for manipulating styles. */
 .btn:link, .btn:visited {
@@ -155,6 +181,38 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     /* background-color: red; */ }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 6rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left;
+    height: 3rem; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 8rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 8rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2*8rem)/3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2*8rem)/3) + 8rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3*8rem)/4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3*8rem)/4) + 8rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3*8rem)/4) + 2*8rem); }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem;
+  margin-top: -20vh; }
 
 /* Background-image: cover enlarges and attaches the image as cover to the container. */
 /* Background-size : top makes sure that the top of the image stays intact while we crop. */
