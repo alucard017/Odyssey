@@ -1,8 +1,16 @@
-.u-center-class
+.u-center-text
 {
-  text-align: center;
+  text-align: center !important;
 }
-.u-margin-bottom-8
+.u-margin-bottom-big
 {
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
+}
+.u-margin-bottom-small
+{
+  margin-bottom: 1.5rem !important;
+}
+.u-margin-bottom-medium
+{
+  margin-bottom: 4rem !important;
 }

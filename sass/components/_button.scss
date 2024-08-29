@@ -1,16 +1,21 @@
 /* Pseudo classes indicate special state of an element and select them for manipulating styles. */
 .btn {
+  &,
   &:link,
   &:visited {
     text-decoration: none;
     text-transform: uppercase;
-    padding: 1.5rem 2.9rem;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 6.25rem;
+    border-radius: 10rem;
+    font-size: $default_font-size;
 
     /* Transition needs to be placed inside the initial state always. */
     transition: all 0.2s;
     position: relative; /*  for the ::after pseudoelelement */
+
+    border: none;
+    cursor: pointer;
   }
   &::after {
     /* Necessary for after pseudo-element */
@@ -19,7 +24,7 @@
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 6.25rem;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,15 +33,16 @@
   }
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0.625rem 1.25rem rgba($color-black, 0.2);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
     }
   }
-  &:active {
+  &:active,
+  &:focus{
     transform: translateY(-1px);
-    box-shadow: 0 0.313rem 0.625rem rgba($color-black, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
   &-white {
     background-color: $color-bg-white;
@@ -49,4 +55,32 @@
     animation: moveFromBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards; /* applies the animation before actual animation starts before 0% */
   }
+}
+
+.btn-txt{
+   &:link,
+   &:visited
+   {
+     font-size: $default-font-size;
+     color: $color-primary-dark;
+     display: inline-block;
+     text-decoration: none;
+     border-bottom: 1px solid $color-primary;
+     padding: 3px;
+     transition: all .2s;
+   }
+   &:hover
+   {
+      background-color: $color-primary;
+      color: $color-text;
+      box-shadow: 0 1rem 2rem rgba($color-black, .15);
+      transform: translateY(-2px);
+      //border-radius: 10px;
+      //padding: 5px;
+   }
+   &:active
+   {
+     box-shadow: 0 0.5rem 1rem rgba($color-black, .15);
+     transform: translateY(-2px);
+   }
 }

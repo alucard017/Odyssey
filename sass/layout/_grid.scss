@@ -15,7 +15,7 @@
   [class^="col-"]{
     //background-color: blue;
     float: left;
-    height: $grid-height;
+    //height: $grid-height;
     &:not(:last-child)
     {
       margin-right: $horizontal-space;

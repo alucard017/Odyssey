@@ -39,10 +39,11 @@ Dark orange: #EE7214
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: inherit; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
 
 html {
   font-size: 62.5%; }
@@ -60,12 +61,12 @@ body {
   /* Sometimes animation makes some elements shaky, reason is still unknown. */
   backface-visibility: hidden;
   /*The backface of the Element after the transform will be hidden from USER*/
-  margin-bottom: 40px; }
+  margin-bottom: 6rem; }
   .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     /* name of animation specified in KEYFRAMES. */
     animation-name: moveInFromLeft;
     animation-duration: 1s;
@@ -76,9 +77,9 @@ body {
       */ }
   .heading-primary-second {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 11.5px;
+    letter-spacing: 1.5rem;
     animation: moveInFromRight 1s ease-out;
     /*shorthand property */
     /* animation-name: moveInFromRight;
@@ -87,33 +88,54 @@ body {
 
 .heading-secondary {
   display: inline-block;
-  font-size: 2.7rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
   background-image: linear-gradient(to right, #d4145ad5, #fbb13be2);
   -webkit-background-clip: text;
-  color: transparent; }
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all 0.4s; }
   .heading-secondary:hover {
     transform: scale(1.2);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
-.u-center-class {
-  text-align: center; }
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
 
-.u-margin-bottom-8 {
-  margin-bottom: 8rem; }
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
 
 /* Pseudo classes indicate special state of an element and select them for manipulating styles. */
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
-  padding: 1.5rem 2.9rem;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 6.25rem;
+  border-radius: 10rem;
+  font-size: 1.6rem;
   /* Transition needs to be placed inside the initial state always. */
   transition: all 0.2s;
   position: relative;
-  /*  for the ::after pseudoelelement */ }
+  /*  for the ::after pseudoelelement */
+  border: none;
+  cursor: pointer; }
 
 .btn::after {
   /* Necessary for after pseudo-element */
@@ -122,7 +144,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 6.25rem;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -132,14 +154,14 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
   .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
   transform: translateY(-1px);
-  box-shadow: 0 0.313rem 0.625rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn-white {
   background-color: whitesmoke;
@@ -151,6 +173,51 @@ body {
   animation: moveFromBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
   /* applies the animation before actual animation starts before 0% */ }
+
+.btn-txt:link, .btn-txt:visited {
+  font-size: 1.6rem;
+  color: #fbb13be2;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #fbb13fe9;
+  padding: 3px;
+  transition: all .2s; }
+
+.btn-txt:hover {
+  background-color: #fbb13fe9;
+  color: maroon;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-txt:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 10;
+    transition: all 0.3s;
+    outline-offset: 1.3rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #d4145ad5;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.9); }
 
 .header {
   height: 95vh;
@@ -186,32 +253,31 @@ body {
   max-width: 114rem;
   margin: 0 auto; }
   .row:not(:last-child) {
-    margin-bottom: 6rem; }
+    margin-bottom: 8rem; }
   .row::after {
     content: "";
     display: table;
     clear: both; }
   .row [class^="col-"] {
-    float: left;
-    height: 3rem; }
+    float: left; }
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 8rem; }
+      margin-right: 6rem; }
   .row .col-1-of-2 {
-    width: calc((100% - 8rem)/2); }
+    width: calc((100% - 6rem)/2); }
   .row .col-1-of-3 {
-    width: calc((100% - 2*8rem)/3); }
+    width: calc((100% - 2*6rem)/3); }
   .row .col-2-of-3 {
-    width: calc(2 * ((100% - 2*8rem)/3) + 8rem); }
+    width: calc(2 * ((100% - 2*6rem)/3) + 6rem); }
   .row .col-1-of-4 {
-    width: calc((100% - 3*8rem)/4); }
+    width: calc((100% - 3*6rem)/4); }
   .row .col-2-of-4 {
-    width: calc(2 * ((100% - 3*8rem)/4) + 8rem); }
+    width: calc(2 * ((100% - 3*6rem)/4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc(3 * ((100% - 3*8rem)/4) + 2*8rem); }
+    width: calc(3 * ((100% - 3*6rem)/4) + 2*6rem); }
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem;
+  padding: 25rem 0;
   margin-top: -20vh; }
 
 /* Background-image: cover enlarges and attaches the image as cover to the container. */

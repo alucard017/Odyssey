@@ -1,10 +1,19 @@
 $color-primary-light: #d4145ad5;
 $color-primary-dark: #fbb13be2;
+$color-primary: #fbb13fe9;
+
 $color-text: maroon;
 $color-bg-white: whitesmoke;
 $color-black: #000;
+
 $color-light-grey-1 : #f7f7f7;
+//$color-light-grey-1 : red;
+
+//GRID
 $grid-width : 114rem;
 $grid-height : 3rem;
-$horizontal-space : 8rem;
-$vertical-space: 6rem;
+$horizontal-space : 6rem;
+$vertical-space: 8rem;
+
+//fonts
+$default-font-size: 1.6rem;
