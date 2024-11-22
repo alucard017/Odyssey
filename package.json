@@ -12,10 +12,13 @@
     "scss-tokenizer": "^0.4.3"
   },
   "devDependencies": {
-    "node-sass": "^9.0.0"
+    "@types/node": "^22.9.1",
+    "express": "^4.21.1",
+    "node-sass": "^9.0.0",
+    "typescript": "^5.7.2"
   },
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass frontend/src/sass/main.scss frontend/src/css/style.css -w"
   },
   "author": "",
   "license": "ISC"
