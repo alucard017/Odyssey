@@ -5,6 +5,9 @@ Dark orange: #EE7214
 */
 /* Browser me pehle hi kuch kuda rehta hai. Usko hatao. */
 /* Border box tells that the box model doesn't add borders and paddings to the total height and total weight. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @keyframes moveInFromLeft {
   0% {
     opacity: 0;
@@ -91,7 +94,7 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #d4145ad5, #fbb13be2);
+  background-image: linear-gradient(to right, #4E65FF, #92EFFD);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: .2rem;
@@ -176,7 +179,7 @@ body {
 
 .btn-txt:link, .btn-txt:visited {
   font-size: 1.6rem;
-  color: #fbb13be2;
+  color: #92EFFD;
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #fbb13fe9;
@@ -212,7 +215,7 @@ body {
       left: 20%;
       top: 10rem; }
     .composition__photo:hover {
-      outline: 1.5rem solid #d4145ad5;
+      outline: 1.5rem solid #4E65FF;
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 20; }
@@ -225,7 +228,7 @@ body {
   /* Two images one top of the other */
   /* Linear gradient generates beautiful gradient view. */
   /* background-image: linear-gradient(to right bottom,rgba(208, 130, 70, 0.8) ,rgba(238, 114, 20, 0.8) ),url(../img/hero.jpg); */
-  background-image: linear-gradient(to right bottom, #d4145ad5, #fbb13be2), url(../../assets/img/hero.jpg);
+  background-image: linear-gradient(to right bottom, #4E65FF, #92EFFD), url(../../assets/img/hero.jpg);
   background-size: cover;
   background-position: top;
   /* Cuts the whole container as a shape, polygon, triangle, square, accepts the coordinates of viewport. */
